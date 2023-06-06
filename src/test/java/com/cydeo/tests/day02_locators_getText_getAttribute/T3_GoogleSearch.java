@@ -12,37 +12,35 @@ public class T3_GoogleSearch {
     public static void main(String[] args) {
 
 //        TC#3: Google search
-        //        1- Open a Chrome browser
+        //1- Open a Chrome browser
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        //        2- Go to: https://google.com
-
+        //2- Go to: https://google.com
         driver.get("https://google.com");
 
-        //        3- Write “apple” in search box
+        //3- Write “apple” in search box
+        //locate search box
+        WebElement searchField = driver.findElement(By.name("q"));
 
-        WebElement search = driver.findElement(By.name("q"));
-        //search.click();
-        search.sendKeys("Apple");
+        //enter "apple" keys
+        searchField.sendKeys("apple" + Keys.ENTER); //another way of pressing ENTER on keyboard
 
+        //4- Press ENTER to search
+        //searchField.sendKeys(Keys.ENTER);
 
-        //        4- Press ENTER to search
-
-        search.sendKeys(Keys.ENTER);
-
-        //        5- Verify title:
-        //          Expected: Title should start with “apple” word
-
-        String expectedTitle = "apple";
+        //5- Verify title:
+        //Expected: Title should start with “apple” word
+        String expectedInTitle = "apple";
         String actualTitle = driver.getTitle();
 
-        if (actualTitle.toLowerCase().startsWith(expectedTitle)) {
-            System.out.println("Title check SUCCESFULL ");
+        //Compare returned result with expected result and return a message
+        if (actualTitle.startsWith(expectedInTitle)) {
+            System.out.println("Title verification --> PASSED!");
         } else {
-            System.out.println("Title check FAILED");
+            System.out.println("Title verification --> FAILED!");
         }
 
         driver.quit();
