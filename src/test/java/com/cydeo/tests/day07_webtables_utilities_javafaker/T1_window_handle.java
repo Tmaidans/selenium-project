@@ -1,10 +1,12 @@
-package com.cydeo.tests.day07_webtables;
+package com.cydeo.tests.day07_webtables_utilities_javafaker;
 
+import com.cydeo.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -23,6 +25,11 @@ public class T1_window_handle {
 
         driver.get("https://www.amazon.com");
 
+    }
+
+    @AfterClass
+    public void teardownClass(){
+        driver.quit();
     }
 
     @Test
@@ -44,11 +51,20 @@ public class T1_window_handle {
 
         }
 
-        String actualTitle = driver.getTitle();
-        String expectedTitle = "Etsy";
-
-        Assert.assertTrue(actualTitle.contains(expectedTitle));
+            BrowserUtils.verifyTitleContains(driver,"Etsy");
 
     }
+
+    @Test
+    public void utilsTest(){
+
+        ((JavascriptExecutor) driver).executeScript("window.open('http://google.com','_blank');");
+        ((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
+        ((JavascriptExecutor) driver).executeScript("window.open('http://facebook.com','_blank');");
+
+        BrowserUtils.switchWindowAndVerify(driver,"etsy","Etsy");
+
+    }
+
 
 }
