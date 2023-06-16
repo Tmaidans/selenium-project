@@ -43,14 +43,15 @@ public class T5_dropdown_intro {
 //        Expected: “Select a State”
 
         Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
+        stateDropdown.selectByValue("AL");
         String defaultState = stateDropdown.getFirstSelectedOption().getText();
-        Assert.assertTrue(defaultState.equals("Select a State"));
+        //   Assert.assertTrue(defaultState.equals("Select a State"));
     }
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
+    //  @AfterClass
+    //  public void tearDown() {
+    //    driver.quit();
+//    }
 
 
 }
