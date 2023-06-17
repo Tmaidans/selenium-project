@@ -28,8 +28,6 @@ public class Driver {
 
         if (driver == null) {
             String browserType = ConfigReader.getProperty("browser");
-
-
                /*
                Depending on the browser type returned from configuration.properties, switch statement will determine
                the case and open matching browser .
@@ -40,17 +38,33 @@ public class Driver {
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    break;
 
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    break;
             }
-
 
         }
 
         return driver;
     }
+
+    public static void closeDriver() {
+
+        if (driver != null) {
+            /*
+            This line will terminate the currently existing driver completely. It will not exist going forward.
+             */
+            driver.quit();
+
+            driver = null;
+
+        }
+    }
+
+
 }
