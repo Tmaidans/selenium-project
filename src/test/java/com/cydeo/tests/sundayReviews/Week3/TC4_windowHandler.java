@@ -1,4 +1,4 @@
-package com.cydeo.sundayReviews.Week3;
+package com.cydeo.tests.sundayReviews.Week3;
 
 import com.cydeo.utilities.ConfigReader;
 import com.cydeo.utilities.Driver;
