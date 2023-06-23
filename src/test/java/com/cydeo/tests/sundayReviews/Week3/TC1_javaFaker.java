@@ -1,6 +1,6 @@
-package com.cydeo.sundayReviews.Week3;
+package com.cydeo.tests.sundayReviews.Week3;
 
-import com.cydeo.base.TestBase;
+import com.cydeo.tests.base.TestBase;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

@@ -1,12 +1,9 @@
-package com.cydeo.base;
+package com.cydeo.tests.base;
 
 import com.cydeo.utilities.ConfigReader;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 

@@ -1,4 +1,4 @@
-package com.cydeo.sundayReviews.Week3;
+package com.cydeo.tests.sundayReviews.Week3;
 
 public class TC3_iFrames {
 

@@ -1,14 +1,11 @@
-package com.cydeo.sundayReviews.Week3;
+package com.cydeo.tests.sundayReviews.Week3;
 
 import com.cydeo.utilities.ConfigReader;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class TC5_tables {

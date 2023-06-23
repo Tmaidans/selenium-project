@@ -1,11 +1,9 @@
-package com.cydeo.sundayReviews.Week3;
+package com.cydeo.tests.sundayReviews.Week3;
 
 import com.cydeo.utilities.ConfigReader;
 import com.cydeo.utilities.Driver;
-import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
